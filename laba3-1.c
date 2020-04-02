@@ -6,8 +6,6 @@
 int main()
 {
 	int status;
-	struct timeb sys_time;
-	struct tm *loc_time;
 	pid_t child1, child2;
 	if (child1 = fork() == 0)
 	{
@@ -35,6 +33,8 @@ int main()
 			
 		}
 	}
+	struct timeb sys_time;
+	struct tm *loc_time;
 	ftime(&sys_time);
 	loc_time = localtime(&sys_time.time);
 	printf("%d:%d:%d:%d\n", loc_time->tm_hour, loc_time->tm_min, loc_time->tm_sec, sys_time.millitm);
