@@ -27,7 +27,7 @@ void process_file(char *filePath, off_t fileSize)
 	int count = 0;
 	while((count = read(file, &buf, sizeof(BUF_SIZE))) != 0){
 		if(count == -1){
-			fprintf("Error: cannot read block from file %s.\n", filePath);
+			printf("Error: cannot read block from file %s.\n", filePath);
 			exit(1);
 		}
 		for(int i = 0; i < count; i++){
